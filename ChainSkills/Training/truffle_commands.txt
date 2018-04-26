@@ -1,0 +1,41 @@
+For truffle 4.0.4 !!!!
+
+// basic init
+truffle init
+
+// start truffle dummy node
+truffle develop 
+
+// see logs in the truffle console
+truffle develop --log
+
+**********************************************
+********* in the truffle dev console *********
+**********************************************
+
+// compile all the stuff from scratch
+migrate --compile-all --reset
+
+// see all acounts 
+web3.eth.accounts
+
+// get an instance of the deployed contract: asynCall then put inside 'app'
+Greetings.deployed().then(function(instance){app = instance;})
+// then can call any method from contract:
+app.getGreetings()
+app.setGreetings("Hello ChainSkills!", {from: web3.eth.accounts[0]})
+
+// exit the dev console
+.exit 
+
+// deploy contracts on different network
+truffle migrate --compile-all --reset --network ganache
+
+// interact with contract deployed on ganache
+truffle console --network ganache
+
+// get transaction details in the console
+web3.eth.getTransaction("0x347a55a9ab6cbd1df124163c2181e8598b1430e26fb8279ec7d6d7d095b38726")
+
+// get block details in the console
+web3.eth.getBlock("0x3ba66df6d8e835ca0a031d5e23f73daf5518495de8c9aee383cc3b1e5b6e70b0")
