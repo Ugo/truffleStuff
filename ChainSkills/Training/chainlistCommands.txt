@@ -1,0 +1,5 @@
+// call to sell article
+app.sellArticle("iPhone 7", "Selling in order to buy iPhone 8", web3.toWei(3, "ether"), {from: web3.eth.accounts[1]})
+
+// start test suite
+truffle test --network ganache
